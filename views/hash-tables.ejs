@@ -1,0 +1,50 @@
+<!-- hash-tables.html -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+<body>
+<header>
+    <h1>Hash Tables</h1>
+</header>
+<%- include('partials/nav') %>
+<main>
+    <div class="hash-tables-content">
+        <div class="hash-tables-text">
+            <h2>What Are Hash Tables?</h2>
+            <p>
+                A hash table is a data structure that stores data in an associative manner using key-value pairs. It utilizes a hash function to compute an index into an array of buckets or slots, from which the desired value can be accessed efficiently.
+            </p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Fast Lookup:</strong> Provides constant time complexity for search, insertion, and deletion in the average case.</li>
+                <li><strong>Efficient Storage:</strong> Handles large datasets effectively by using a hash function to distribute data evenly across an array.</li>
+                <li><strong>Collisions Handling:</strong> Deals with hash collisions using methods like chaining or open addressing.</li>
+            </ul>
+            <h3>Basic Operations:</h3>
+            <ul>
+                <li><strong>Insert:</strong> Add a key-value pair.</li>
+                <li><strong>Search:</strong> Retrieve the value associated with a key.</li>
+                <li><strong>Delete:</strong> Remove a key-value pair.</li>
+            </ul>
+            <h3>Applications:</h3>
+            <ul>
+                <li><strong>Databases:</strong> Indexing and key-value storage.</li>
+                <li><strong>Caches:</strong> Frequently accessed data is stored for quick access.</li>
+                <li><strong>Symbol Tables:</strong> Used in compilers for variable and function storage.</li>
+            </ul>
+        </div>
+        <div class="hash-tables-image">
+            <img src="img/hash-tables.png" alt="Hash Table Illustration">
+        </div>
+    </div>
+    <h2>Collision Resolution Techniques</h2>
+    <ul>
+        <li><strong>Chaining:</strong> Use a linked list to store multiple elements at the same index.</li>
+        <li><strong>Open Addressing:</strong> Find another slot using probing methods like linear or quadratic probing.</li>
+        <li><strong>Double Hashing:</strong> Apply a second hash function to resolve collisions.</li>
+    </ul>
+    <p>For more details, visit <a href="https://www.geeksforgeeks.org/hashing-data-structure/" target="_blank">this guide on hashing in data structures</a>.</p>
+</main>
+<%- include ('partials/footer') %>
+</body>
+</html>
