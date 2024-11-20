@@ -44,5 +44,5 @@ index.get('/inspirational-quote', async (req, res) => {
 
 // Starts the server
 index.listen(3000, () => {
-    console.log('server started on http://localhost:3000');
+    console.log('server started on port 3000');
 });
