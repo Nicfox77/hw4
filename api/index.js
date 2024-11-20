@@ -2,36 +2,36 @@ import express from 'express';
 import fetch from 'node-fetch';
 import inspirationalQuotes from 'inspirational-quotes';
 
-const app = express();
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+const index = express();
+index.set("view engine", "ejs");
+index.use(express.static("public"));
 
 // Define routes
-app.get('/', (req, res) => {
+index.get('/', (req, res) => {
     res.redirect('/home');
 });
 
-app.get('/home', async (req, res) => {
+index.get('/home', async (req, res) => {
     res.render('index');
 });
 
-app.get('/arrays', (req, res) => {
+index.get('/arrays', (req, res) => {
     res.render('arrays');
 });
 
-app.get('/stacks', (req, res) => {
+index.get('/stacks', (req, res) => {
     res.render('stacks');
 });
 
-app.get('/trees', (req, res) => {
+index.get('/trees', (req, res) => {
     res.render('trees');
 });
 
-app.get('/hash-tables', (req, res) => {
+index.get('/hash-tables', (req, res) => {
     res.render('hash-tables');
 });
 
-app.get('/inspirational-quote', async (req, res) => {
+index.get('/inspirational-quote', async (req, res) => {
     let quote = inspirationalQuotes.getQuote();
     console.log(quote);
     let apiKey = "lqv1Mc6kqGPOC1eF7m5t1Fzxrl-donO_sQCHPqFF7-U";
@@ -43,6 +43,6 @@ app.get('/inspirational-quote', async (req, res) => {
 });
 
 // Starts the server
-app.listen(3000, () => {
+index.listen(3000, () => {
     console.log('server started on http://localhost:3000');
 });
