@@ -11,7 +11,7 @@ index.get('/', (req, res) => {
     res.redirect('/home');
 });
 
-index.get('/home', async (req, res) => {
+index.get('/home', (req, res) => {
     res.render('index');
 });
 
