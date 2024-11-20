@@ -1,0 +1,20 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+<body>
+<header>
+    <h1>Data Structures</h1>
+</header>
+<%- include('partials/nav') %>
+<main>
+    <h2><b>Inspirational Quote</b></h2>
+        <p><%= quote.text %> - <%= quote.author %></p>
+
+    <br>
+    <br>
+    <img src = "<%= randomImage %>">
+</main>
+<%- include ('partials/footer') %>
+</body>
+</html>

@@ -1,12 +1,17 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import inspirationalQuotes from 'inspirational-quotes';
 
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // Define routes
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
+app.get('/home', async (req, res) => {
     res.render('index');
 });
 
@@ -24,6 +29,17 @@ app.get('/trees', (req, res) => {
 
 app.get('/hash-tables', (req, res) => {
     res.render('hash-tables');
+});
+
+app.get('/inspirational-quote', async (req, res) => {
+    let quote = inspirationalQuotes.getQuote();
+    console.log(quote);
+    let apiKey = "lqv1Mc6kqGPOC1eF7m5t1Fzxrl-donO_sQCHPqFF7-U";
+    let url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&featured=true&query=inspirational`;
+    let response = await fetch(url);
+    let data = await response.json();
+    let randomImage = data.urls.full;
+    res.render('inspirational-quote', { quote, randomImage });
 });
 
 // Starts the server
